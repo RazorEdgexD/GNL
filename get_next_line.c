@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 static char		*ft_sj_f(char *s1, char *s2)
 {
@@ -31,26 +31,26 @@ static char		*ft_sj_f(char *s1, char *s2)
 
 static t_gnl	*ft_pick_lst(t_gnl **lst, int fd)
 {
-	t_gnl	*tmp;
+	t_gnl	**tmp;
 
 	tmp = lst;
 	while (*tmp)
 	{
-		if ((tmp)->fd == fd)
+		if ((*tmp)->fd == fd)
 			return (*tmp);
-		tmp = (*tmp)->next;
+		tmp = &(*tmp)->next;
 	}
-	if (tmp == NULL)
+	if (*tmp == NULL)
 	{
-		tmp = malloc(sizeof(*tmp));
-		(tmp)->fd = fd;
-		(tmp)->str = NULL;
-		(tmp)->next = NULL;
+		*tmp = malloc(sizeof(**tmp));
+		(*tmp)->fd = fd;
+		(*tmp)->str = NULL;
+		(*tmp)->next = NULL;
 	}
-	return (tmp);
+	return (*tmp);
 }
 
-int				ft_line_from_lst(char **line, t_gnl *lst)
+static int		ft_line_from_lst(char **line, t_gnl *lst)
 {
 	char	*tmp;
 
@@ -71,7 +71,7 @@ int				ft_line_from_lst(char **line, t_gnl *lst)
 	return (0);
 }
 
-int				ft_line_from_fd(char **line, t_gnl *lst)
+static int		ft_line_from_fd(char **line, t_gnl *lst)
 {
 	int		handle;
 	char	buf[BUFF_SIZE + 1];
