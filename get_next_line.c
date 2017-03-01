@@ -6,11 +6,11 @@
 /*   By: aosobliv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/08 19:07:50 by aosobliv          #+#    #+#             */
-/*   Updated: 2017/01/11 14:06:23 by aosobliv         ###   ########.fr       */
+/*   Updated: 2017/03/01 13:28:15 by aosobliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "get_next_line.h"
 
 static char		*ft_sj_f(char *s1, char *s2)
 {
