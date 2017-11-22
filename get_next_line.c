@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aosobliv <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aosobliv <aosobliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/08 19:07:50 by aosobliv          #+#    #+#             */
-/*   Updated: 2017/03/01 13:28:15 by aosobliv         ###   ########.fr       */
+/*   Updated: 2017/11/22 17:40:20 by aosobliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,6 @@ int				get_next_line(int const fd, char **line)
 {
 	static t_gnl	*list = NULL;
 	t_gnl			*tmp;
-	char			*fre;
 
 	if (!line || fd < 0)
 		return (-1);
